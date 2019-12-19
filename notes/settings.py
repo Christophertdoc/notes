@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+from .variables import USER
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -73,6 +74,8 @@ WSGI_APPLICATION = 'notes.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+# user = os.getenv('DB_USER')
+# password = os.environ.get('DB_PASSWORD')
 DATABASES = {
     'default': {
         # MySQL database engine class.
@@ -84,9 +87,10 @@ DATABASES = {
         # database name.
         'NAME': 'notes',
         # user name.
-        'USER': 'root',
+        'USER': USER,
         # password
         'PASSWORD': 'Thg923*#i',
+        # 'PASSWORD': os.environ.get('DB_PASSWORD'),
         # connect options
         'OPTIONS': {'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",},
     }
