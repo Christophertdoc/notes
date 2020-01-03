@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-from .variables import USER
+from .variables import USER, PASS, HOST, PORT, NAME
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -81,15 +81,15 @@ DATABASES = {
         # MySQL database engine class.
         'ENGINE': 'django.db.backends.mysql',
         # MySQL database host ip.
-        'HOST': '127.0.0.1',
+        'HOST': HOST,
         # port number.
-        'PORT': '3306',
+        'PORT': PORT,
         # database name.
-        'NAME': 'notes',
+        'NAME': NAME,
         # user name.
         'USER': USER,
         # password
-        'PASSWORD': 'Thg923*#i',
+        'PASSWORD': PASS,
         # 'PASSWORD': os.environ.get('DB_PASSWORD'),
         # connect options
         'OPTIONS': {'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",},
